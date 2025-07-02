@@ -6,12 +6,52 @@ on:  # 触发工作流的条件
       - main  # 仅当推送到main分支时触发
 
 jobs:  # 工作流中的作业
-  deploy:  # 作业名称
-    runs-on: huawei  # 运行环境：最新版Ubuntu
-    steps:  # 作业中的步骤
-      - name: Deploy to Server  # 步骤名称：部署到服务器
-        uses: appleboy/scp-action@master  # 使用SCP action进行文件传输
-        with:  # 参数配置
-          source: "public/"  # 要传输的源文件/目录
-          target: ${{ secrets.SERVER_DEPLOY_PATH }}  # 目标路径，从GitHub密钥中获取
-          strip_components: 1  # 剥离目录层级，即只复制public/内的内容，而非整个public目录
+  deploy:
+    runs-on: huawei
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Build Hugo site
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+          
+      - name: Build site
+        run: hugo --minify
+        
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 1panel.z1hwang.cn
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/index
+            # 拉取远程仓库更新（如果是Git仓库）
+            # git pull
+            # 或者清空目录准备接收新文件
+            rm -rf * .[^.]*
+
+      - name: Upload Hugo public files
+        uses: appleboy/scp-action@master
+        with:
+          host: 1panel.z1hwang.cn
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "public/"
+          target: "/opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/index"
+          strip_components: 1
+          
+      - name: Final server adjustments
+        uses: appleboy/ssh-action@master
+        with:
+          host: 1panel.z1hwang.cn
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/index
+            # 执行任何需要的后续命令，例如设置权限等
+            find . -type d -exec chmod 755 {} \;
+            find . -type f -exec chmod 644 {} \;
