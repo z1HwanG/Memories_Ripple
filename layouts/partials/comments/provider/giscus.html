@@ -1,0 +1,58 @@
+{{- with .Site.Params.comments.giscus -}}
+<div class="giscus-container">
+    <div class="giscus-info" style="margin-bottom: 1rem; padding: 0.75rem; border-radius: 0.25rem; background-color: rgba(0, 0, 0, 0.05); color: inherit;">
+        <p style="margin: 0;">💬 评论功能基于GitHub Discussions，需要 <strong>GitHub账号登录</strong> 才能发表评论。您的评论将直接存储在GitHub中，而非第三方服务器。</p>
+    </div>
+    
+    <script
+        src="https://giscus.app/client.js"
+        data-repo="{{- .repo -}}"
+        data-repo-id="{{- .repoID -}}"
+        data-category="{{- .category -}}"
+        data-category-id="{{- .categoryID -}}"
+        data-mapping="{{- default `title` .mapping -}}"
+        data-strict="{{- default 0 .strict -}}"
+        data-reactions-enabled="{{- default 1 .reactionsEnabled -}}"
+        data-emit-metadata="{{- default 0 .emitMetadata -}}"
+        data-input-position="{{- default `top` .inputPosition -}}"
+        data-theme="{{- default `light` .lightTheme -}}"
+        data-lang="{{- default `zh-CN` .lang -}}"
+        data-loading="{{- .loading -}}"
+        crossorigin="anonymous"
+        async
+    ></script>
+    <script>
+        function setGiscusTheme(theme) {
+            let giscus = document.querySelector("iframe.giscus-frame");
+            if (giscus) {
+                giscus.contentWindow.postMessage(
+                    {
+                        giscus: {
+                            setConfig: {
+                                theme: theme,
+                            },
+                        },
+                    },
+                    "https://giscus.app"
+                );
+            }
+        }
+
+        (function () {
+            addEventListener("message", (e) => {
+                if (event.origin !== "https://giscus.app") return;
+                handler();
+            });
+            window.addEventListener("onColorSchemeChange", handler);
+
+            function handler() {
+                if (document.documentElement.dataset.scheme === "light") {
+                    setGiscusTheme('{{- default "light" .lightTheme -}}');
+                } else {
+                    setGiscusTheme('{{- default "dark_dimmed" .darkTheme -}}');
+                }
+            }
+        })();
+    </script>
+</div>
+{{- end -}} 

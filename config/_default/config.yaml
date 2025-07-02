@@ -1,0 +1,26 @@
+baseURL: http://localhost:1313/
+timeZone: Asia/Shanghai
+hasCJKLanguage: true
+defaultContentLanguage: zh  # 默认语言为中文
+defaultContentLanguageInSubdir: false  # 默认语言不使用子目录
+
+
+# 输出配置
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # 添加JSON输出，这对搜索功能很重要
+    - Sitemap
+
+# 输出格式配置
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: searchindex
+    isPlainText: true
+    notAlternative: true
+
+module:
+  imports:
+    - path: github.com/CaiJimmy/hugo-theme-stack/v3

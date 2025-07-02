@@ -1,0 +1,8 @@
+includeNewer: true  # 包括较新的文章
+threshold: 60  # 相关度阈值
+toLower: false  # 是否将标签转为小写
+indices:  # 相关度指标
+    - name: tags  # 标签
+      weight: 100  # 权重
+    - name: categories  # 分类
+      weight: 200  # 权重

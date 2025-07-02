@@ -1,0 +1,18 @@
+{{- $name := .Get "name" -}}
+{{- $url := .Get "url" -}}
+{{- $logo := .Get "logo" -}}
+{{- $word := .Get "word" -}}
+
+<div class="friend-link-item">
+    <a href="{{ $url }}" title="{{ $name }}" target="_blank" class="friend-link-link">
+        <div class="friend-link-content">
+            <div class="friend-link-avatar">
+                <img src="{{ $logo }}" alt="{{ $name }}" loading="lazy" />
+            </div>
+            <div class="friend-link-info">
+                <div class="friend-link-name">{{ $name }}</div>
+                <div class="friend-link-description">{{ $word }}</div>
+            </div>
+        </div>
+    </a>
+</div> 

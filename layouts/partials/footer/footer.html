@@ -1,0 +1,72 @@
+{{- $ThemeVersion := "3.30.0" -}}
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-row">
+            <div class="footer-item">
+                <section class="copyright">
+                    &copy; 
+                    {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+                        {{ .Site.Params.footer.since }} - 
+                    {{ end }}
+                    {{ now.Format "2006" }} {{ if .Site.Params.copyright }}{{ .Site.Params.copyright }}{{ else }}{{ .Site.Title }}{{ end }}
+                </section>
+            </div>
+        </div>
+        
+        <div class="footer-row powered-by">
+            <section class="powerby">
+                {{ with .Site.Params.footer.customText }}
+                    {{ . | safeHTML }}
+                {{ end }}
+
+                {{- $Generator := `<a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>` -}}
+                {{- $Theme := printf `<a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="%s">Stack</a>` $ThemeVersion -}}
+                {{- $DesignedBy := `<a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>` -}}
+
+                {{ T "footer.builtWith" (dict "Generator" $Generator) | safeHTML }}
+                {{ T "footer.designedBy" (dict "Theme" $Theme "DesignedBy" $DesignedBy) | safeHTML }}
+            </section>
+        </div>
+    </div>
+</footer>
+
+<style>
+.site-footer {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--card-separator-color);
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: var(--main-width);
+    margin: 0 auto;
+    padding: 0 var(--main-padding);
+}
+
+.footer-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.footer-item {
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.powered-by {
+    justify-content: center;
+    color: var(--card-text-color-tertiary);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .footer-row {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style> 

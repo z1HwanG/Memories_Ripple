@@ -1,0 +1,107 @@
+copyright: Abbott Ricardo  # 版权信息
+author:
+  name: z1HwanG
+  email: z1hwang@163.com
+mainSections:
+  - post
+favicon: img/1.jpg
+featuredImageField: image    # 用于特色图片的字段名称
+rssFullContent: true         # RSS订阅中包含完整文章内容，而非摘要
+footer:
+  since: 2025          # 页脚显示的起始年份（当前为空）
+  customText:         # 页脚自定义文本（当前为空）
+
+dateFormat:  # 日期格式
+  published: Jan 02, 2006  # 发布日期格式
+  lastUpdated: Jan 02, 2006 15:04 GMT  # 最后更新日期格式
+
+sidebar:
+  compact: false        # 是否使用紧凑侧边栏模式
+  emoji: #🍥               # 头像旁边显示的emoji表情（当前为空）
+  subtitle: z1HwanG     # 侧边栏副标题（当前为空）
+  avatar:
+    enabled: true       # 启用头像显示
+    local: true         # 使用本地头像图片（而非远程URL）
+    src: img/1.jpg      # 头像图片路径（相对于assets目录）
+
+article:
+  headingAnchor: false # 是否为标题添加锚点链接
+  math: true           # 是否启用数学公式支持
+  toc: true            # 是否显示文章目录（Table of Contents）
+  readingTime: true    # 是否显示阅读时间估计
+  license:
+    enabled: false     # 是否启用文章许可证信息
+    default: Licensed under CC BY-NC-SA 4.0 # 默认许可证声明
+  comments: false       # 默认不为文章启用评论，需要在文章前置元数据中手动设置 comments: true
+
+comments:
+  enabled: true       # 全局启用评论系统功能（但单篇文章默认不开启）
+  provider: giscus     # 评论系统提供商
+
+  giscus:
+    repo: z1HwanG/Blog_Test   # GitHub仓库
+    repoID: R_kgDOPEuHlw      # 仓库ID
+    category: General         # 讨论分类
+    categoryID: DIC_kwDOPEuHl84CsTfS    # 分类ID
+    mapping: og:title                   # 页面到讨论的映射方式
+    strict: 1                           # 是否严格匹配
+    reactionsEnabled: 1                 # 是否启用反应，改为启用
+    emitMetadata: 0                     # 是否输出元数据
+    inputPosition: top                  # 评论框位置
+    theme: preferred_color_scheme       # 使用首选颜色方案
+    lang: zh-CN                         # 设置语言为中文
+    lightTheme: light                   # 亮色主题
+    darkTheme: dark_dimmed              # 暗色主题
+
+widgets:                 # 小部件配置
+  homepage:          # 主页小部件（当前为空）
+    - type: search  # 搜索小部件
+    - type: archives  # 归档小部件
+      params:
+        limit: 5  # 显示最近5个归档
+    - type: categories  # 分类小部件
+      params:
+        limit: 10  # 显示最多10个分类
+    - type: tag-cloud  # 标签云小部件
+      params:
+        limit: 10  # 显示最多10个标签
+  page:              # 页面小部件（当前为空）
+    - type: toc  # 目录小部件
+
+defaultImage:  # 默认图片设置
+  opengraph:  # Open Graph图片
+  enabled: true  # 是否启用
+  local: true  # 是否为本地图片
+  src:  # 图片路径
+
+colorScheme:
+  toggle: true         # 是否显示颜色方案切换按钮
+  default: auto        # 默认颜色方案（auto根据系统设置，light亮色，dark暗色）
+
+imageProcessing:  # 图片处理设置
+  cover:  # 封面图片
+    enabled: true  # 启用处理
+  content:  # 内容图片
+    enabled: true  # 启用处理
+
+
+
+#extraCSSFiles:
+#  - /pagefind/pagefind-ui.css
+#externalJSFIles:
+#  - /js/littlefoot.js
+#  - /pagefind/pagefind-ui.js
+#footerExternalLinks:
+#  - name: GitHub
+#    link: https://github.com/z1HwanG/Blog_Test
+#    icon: https://image.guhub.cn/uPic/2025/01/NqL5b5.png
+#  - name: BLOGS·CN
+#    link: https://blogscn.fun/
+#    icon: https://photo.xiangming.site/img/blogscn_icon.png
+#  - name: Travelling
+#    link: https://www.travellings.cn/go.html
+#    icon: https://www.travellings.cn/assets/favicon.png
+
+
+
+

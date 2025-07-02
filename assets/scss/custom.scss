@@ -1,0 +1,71 @@
+// 友情链接样式
+.friend-link-item {
+    width: 100%;
+    margin-bottom: 15px;
+    
+    .friend-link-link {
+        text-decoration: none;
+        
+        &:hover {
+            .friend-link-name {
+                color: var(--primary-color);
+            }
+        }
+    }
+    
+    .friend-link-content {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-radius: var(--card-border-radius);
+        background-color: var(--card-background);
+        box-shadow: var(--shadow-l1);
+        transition: box-shadow 0.3s ease;
+        
+        &:hover {
+            box-shadow: var(--shadow-l2);
+        }
+    }
+    
+    .friend-link-avatar {
+        width: 48px;
+        height: 48px;
+        margin-right: 15px;
+        border-radius: 50%;
+        overflow: hidden;
+        
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    
+    .friend-link-info {
+        flex: 1;
+    }
+    
+    .friend-link-name {
+        font-weight: bold;
+        color: var(--card-text-color-main);
+        transition: color 0.3s ease;
+    }
+    
+    .friend-link-description {
+        font-size: 0.85em;
+        line-height: 1.4;
+        color: var(--card-text-color-secondary);
+    }
+}
+
+@media (min-width: 768px) {
+    .friend-link-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        
+        .friend-link-item {
+            margin-bottom: 0;
+        }
+    }
+} 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>测试 on 往事如漾</title>
+        <link>http://localhost:45530/tags/%E6%B5%8B%E8%AF%95/</link>
+        <description>Recent content in 测试 on 往事如漾</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-CN</language>
+        <managingEditor>z1hwang@163.com (z1HwanG)</managingEditor>
+        <webMaster>z1hwang@163.com (z1HwanG)</webMaster>
+        <copyright>Abbott Ricardo</copyright>
+        <lastBuildDate>Wed, 25 Dec 2024 12:00:00 +0800</lastBuildDate><atom:link href="http://localhost:45530/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>测试分类显示</title>
+        <link>http://localhost:45530/post/test-category/</link>
+        <pubDate>Wed, 25 Dec 2024 12:00:00 +0800</pubDate>
+        <author>z1hwang@163.com (z1HwanG)</author>
+        <guid>http://localhost:45530/post/test-category/</guid>
+        <description>&lt;h1 id=&#34;测试分类显示&#34;&gt;测试分类显示
+&lt;/h1&gt;&lt;p&gt;这是一篇用于测试分类显示的文章。这篇文章被分配到&amp;quot;测试&amp;quot;分类下，而不是&amp;quot;文章&amp;quot;分类。&lt;/p&gt;
+&lt;h2 id=&#34;为什么分类很重要&#34;&gt;为什么分类很重要
+&lt;/h2&gt;&lt;p&gt;分类可以帮助读者更好地浏览您的博客内容，根据自己的兴趣找到相关文章。&lt;/p&gt;
+&lt;h2 id=&#34;如何使用分类&#34;&gt;如何使用分类
+&lt;/h2&gt;&lt;p&gt;在Hugo中，可以通过在文章的前置元数据(frontmatter)中设置&lt;code&gt;categories&lt;/code&gt;字段来为文章分配一个或多个分类。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nt&#34;&gt;categories&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;测试&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;- &lt;span class=&#34;l&#34;&gt;技术&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;希望这篇文章能帮助解决分类只显示一篇文章的问题！&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

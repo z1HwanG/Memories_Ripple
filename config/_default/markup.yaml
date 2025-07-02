@@ -1,0 +1,29 @@
+goldmark:  # Goldmark渲染器
+        extensions:
+            passthrough:  # 透传扩展
+                enable: true
+                delimiters:  # 分隔符
+                    block:  # 块级分隔符
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:  # 行内分隔符
+                        - - \(
+                          - \)
+        renderer:
+            unsafe: true  # 允许在Markdown中使用HTML
+
+tableOfContents:  # 目录设置
+        endLevel: 4  # 结束级别
+        ordered: true  # 是否使用有序列表
+        startLevel: 2  # 开始级别
+
+highlight:  # 代码高亮设置
+        noClasses: false  # 使用CSS类而不是内联样式
+        codeFences: true  # 启用代码围栏
+        guessSyntax: true  # 猜测语法
+        lineNoStart: 1  # 起始行号
+        lineNos: true  # 显示行号
+        lineNumbersInTable: true  # 使用表格形式的行号
+        tabWidth: 4  # 制表符宽度
