@@ -9,6 +9,9 @@ jobs:  # 工作流中的作业
   deploy:
     runs-on: huawei
     steps:
+      - name: Start Deployment Notification
+        run: echo "🚀 开始部署 Hugo 网站到服务器..."
+        
       - name: Checkout code
         uses: actions/checkout@v3
         
@@ -29,6 +32,7 @@ jobs:  # 工作流中的作业
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/index
+            echo "🔄 正在准备目标目录..."
             # 拉取远程仓库更新（如果是Git仓库）
             # git pull
             # 或者清空目录准备接收新文件
@@ -52,6 +56,11 @@ jobs:  # 工作流中的作业
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/index
+            echo "🔧 正在设置文件权限..."
             # 执行任何需要的后续命令，例如设置权限等
             find . -type d -exec chmod 755 {} \;
             find . -type f -exec chmod 644 {} \;
+            echo "✅ 网站部署完成！"
+            
+      - name: Deployment Completion
+        run: echo "✅ Hugo 网站已成功部署到 1panel.z1hwang.cn"
