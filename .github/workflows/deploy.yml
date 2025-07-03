@@ -1,26 +1,16 @@
-name: Deploy to VPS  # 工作流名称：部署到VPS服务器
-
-on:                  # 触发条件
-  push:              # 当有推送操作时
-    branches:        # 指定分支
-      - main         # 只在main分支上的推送会触发此工作流
-
-jobs:                # 工作任务
-  deploy:            # 任务名称：部署
-    runs-on: hcss-ecs-0851 5.10.0-182.0.0.95.r1941_123.hce2.x86_64  # 运行环境：最新版Ubuntu
-    steps:           # 执行步骤
-      - name: Checkout code  # 步骤1：检出代码
-        uses: actions/checkout@v3  # 使用官方的checkout动作v3版本
-          
-      - name: List files  # 步骤2：列出文件（用于调试）
-        run: ls -la
-          
-      - name: Deploy to VPS  # 步骤3：部署到VPS服务器
-        uses: appleboy/scp-action@master  # 使用appleboy提供的SCP文件传输动作
-        with:
-          host: z1hwang.cn  # 目标服务器域名
-          username: root    # 登录用户名
-          key: ${{ secrets.SSH_PRIVATE_KEY_BJ_IPC }}  # SSH私钥（存储在GitHub仓库的Secrets中）
-          source: "public/"  # 源文件/文件夹（Hugo生成的静态文件）
-          target: "/opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/"  # 目标路径
-          strip_components: 1  # 去除顶层目录（这样会直接复制public目录中的内容，而不是public目录本身）
+## 部署到服务器
+- name: Deploy to VPS
+  uses: easingthemes/ssh-deploy@main
+  env:
+    # 托管在Github里的远程VPS服务器.ssh文件下的私钥id_rsa
+    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY_BJ_IPC }}
+    # rsync的同步命令参数
+    ARGS: "-avzr --delete"
+    # Github workplace里生成的静态文件目录，即需要同步到远端VPS的文件/文件夹。
+    SOURCE: "./public/"
+    # VPS IP地址。也可以如同id_rsa私钥一样，托管在Github，然后采用动态参数，比如${{ secrets.SSH_IP }}
+    REMOTE_HOST: 1.1.1.1
+    # VPS默认用户名root。
+    REMOTE_USER: root
+    # 需要同步到的VPS目录
+    TARGET: /opt/1panel/apps/openresty/openresty/www/sites/blog.z1hwang.cn/index
