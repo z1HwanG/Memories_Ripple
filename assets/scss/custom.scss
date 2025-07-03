@@ -98,7 +98,7 @@
     line-height: 1.2; // 行高
     letter-spacing: 0.5px; // 字间距
     // color: #e74c3c; // 可以更改颜色
-    // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // 添加文字阴影
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // 添加文字阴影
 }
 
 // 站点描述
@@ -112,4 +112,156 @@
     margin-top: 5px; // 与标题的间距
     // color: #7f8c8d; // 可以更改颜色
     // font-style: italic; // 斜体效果
+}
+
+// 社交媒体菜单居中对齐
+.menu-social {
+    display: flex;
+    justify-content: center; // 水平居中
+    flex-wrap: nowrap; // 如果图标太多会换行
+    margin: 15px 0; // 上下间距
+    padding: 0;
+    width: 100%; // 确保宽度与父元素相同
+}
+
+// 调整社交媒体图标的间距
+.menu-social li {
+    margin: 0 0px; // 水平间距
+    display: inline-block;
+}
+
+// 确保社交媒体图标与其他元素视觉对齐
+.menu-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; // 减小宽度
+    height: 32px; // 减小高度
+    border-radius: 50%; // 圆形
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    transition: all 0.3s ease;
+}
+
+// 调整社交媒体图标内的SVG大小
+.menu-social a svg {
+    width: 18px; // 减小SVG图标大小
+    height: 18px; // 减小SVG图标大小
+}
+
+.menu-social a:hover {
+    box-shadow: var(--shadow-l2);
+    transform: translateY(-2px); // 悬浮效果
+}
+
+// 主菜单样式增强
+#main-menu {
+    margin-top: 10px;
+    overflow: visible; // 防止出现滚动条
+    padding: 0; // 减少内边距
+}
+
+// 菜单项样式
+#main-menu li {
+    margin-bottom: 5px; // 减少菜单项间距
+    transition: all 0.3s ease;
+}
+
+// 菜单项链接样式
+#main-menu li a {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px; // 减少内边距
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: transparent;
+}
+
+// 菜单项悬停效果
+#main-menu li a:hover {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    transform: translateX(5px); // 向右移动效果
+    color: var(--accent-color);
+}
+
+// 菜单图标样式
+#main-menu li a svg {
+    transition: all 0.3s ease;
+    margin-right: 8px; // 减少图标与文字的间距
+    width: 20px; // 减小图标尺寸
+    height: 20px; // 减小图标尺寸
+}
+
+// 菜单图标悬停效果
+#main-menu li a:hover svg {
+    transform: scale(1.1); // 减小图标放大效果
+    color: var(--accent-color);
+}
+
+// 当前激活的菜单项
+#main-menu li.current a {
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    color: var(--accent-color);
+    font-weight: bold;
+    transform: translateX(5px);
+}
+
+// 简单调整主题切换按钮
+#dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px auto;
+    cursor: pointer;
+}
+
+// 调整主题切换图标大小
+#dark-mode-toggle svg {
+    width: 24px;
+    height: 24px;
+}
+
+// 文章分类样式
+.article-header .article-category {
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.article-header .article-category a {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 15px;
+    color: var(--card-text-color-main);
+    font-weight: bold;
+    text-decoration: none;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    transition: all 0.3s ease;
+}
+
+.article-header .article-category a:hover {
+    box-shadow: var(--shadow-l2);
+    color: var(--accent-color);
+}
+
+// 文章标签样式
+.article-footer .article-tags a {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    color: var(--card-text-color-main);
+    font-weight: normal;
+    text-decoration: none;
+    background-color: var(--card-background);
+    box-shadow: var(--shadow-l1);
+    transition: all 0.3s ease;
+}
+
+.article-footer .article-tags a:hover {
+    box-shadow: var(--shadow-l2);
+    color: var(--accent-color);
 } 
