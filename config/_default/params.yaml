@@ -86,22 +86,4 @@ imageProcessing:  # 图片处理设置
 
 
 
-#extraCSSFiles:
-#  - /pagefind/pagefind-ui.css
-#externalJSFIles:
-#  - /js/littlefoot.js
-#  - /pagefind/pagefind-ui.js
-#footerExternalLinks:
-#  - name: GitHub
-#    link: https://github.com/z1HwanG/Blog_Test
-#    icon: https://image.guhub.cn/uPic/2025/01/NqL5b5.png
-#  - name: BLOGS·CN
-#    link: https://blogscn.fun/
-#    icon: https://photo.xiangming.site/img/blogscn_icon.png
-#  - name: Travelling
-#    link: https://www.travellings.cn/go.html
-#    icon: https://www.travellings.cn/assets/favicon.png
-
-
-
 

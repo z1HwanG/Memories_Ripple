@@ -69,3 +69,47 @@
         }
     }
 } 
+
+// 侧边栏样式调整
+.sidebar header {
+    // 使头部内容居中
+    align-items: center;
+    text-align: center;
+}
+
+// 站点标题和描述容器
+.sidebar header .site-meta {
+    // 将文字内容也居中对齐
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: -15px;
+    width: var(--sidebar-avatar-size); // 保持与头像相同的宽度
+    box-sizing: border-box;
+}
+
+// 站点标题
+.sidebar header .site-name {
+    margin: 0;
+    display: block;
+    // 单独控制站点标题样式
+    font-size: 2.0rem; // 调整字体大小
+    font-weight: bold; // 加粗
+    line-height: 1.2; // 行高
+    letter-spacing: 0.5px; // 字间距
+    // color: #e74c3c; // 可以更改颜色
+    // text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); // 添加文字阴影
+}
+
+// 站点描述
+.sidebar header .site-description {
+    margin: 0;
+    display: block;
+    // 单独控制站点描述样式
+    font-size: 1.4rem; // 调整字体大小
+    font-weight: normal; // 字重
+    line-height: 1.3; // 行高
+    margin-top: 5px; // 与标题的间距
+    // color: #7f8c8d; // 可以更改颜色
+    // font-style: italic; // 斜体效果
+} 
